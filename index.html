@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Next-Gen AI Learning Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@13.0.3/lib/browser/math.min.js"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-sCutvgpH3V3xqtuzs3B9b2a+xui2yD22kSrKaDGTfcz9JJe3i/QGzgo2A5qsLcrg" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoIeD1fx+IqCj+0JjaQTRoCkFk/LalTtTz7+M2H5zQf+tZzB+A9A/Sq9H1Y0LhW" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-4wWqgUnN92tQ/gQG3QZ/T8mG0rY/5wLzBh7Mtdi96D69T+B+M5G8rI0tG9+yKijp" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.12.0",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "recharts": "https://esm.sh/recharts@^3.1.2",
+    "framer-motion": "https://esm.sh/framer-motion@^11.3.19"
+  }
+}
+</script>
+<style>
+  @keyframes fade-slide-in {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px) scale(0.98); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .content-enter {
+    animation: fade-slide-in 0.5s ease-out forwards;
+  }
+
+  @keyframes slide-in-left {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  @keyframes slide-out-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+
+  .sidebar-enter {
+    animation: slide-in-left 0.4s ease-out forwards;
+  }
+
+  .sidebar-exit {
+    animation: slide-out-left 0.4s ease-out forwards;
+  }
+  
+  body {
+    font-family: 'Poppins', 'Inter', 'Hind Siliguri', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #1e293b;
+    background-color: #020617; /* bg-slate-950 */
+    color: #f1f5f9; /* text-slate-100 */
+    overflow: hidden; /* Prevent scrolling on body itself */
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+  body::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #475569;
+    border-radius: 10px;
+    border: 2px solid #1e293b;
+  }
+
+  .font-bn {
+    font-family: 'Hind Siliguri', sans-serif;
+  }
+  
+  .font-en {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .glass-card-bg {
+    background-color: rgba(15, 23, 42, 0.6); /* bg-slate-900/60 */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(51, 65, 85, 0.7); /* border-slate-700/70 */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-card-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem; /* same as card */
+    padding: 1px; /* border thickness */
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+</style>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

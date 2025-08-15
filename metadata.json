@@ -1,0 +1,8 @@
+{
+  "name": "Next-Gen AI Learning Assistant",
+  "description": "An AI-powered learning assistant that generates personalized quizzes and notes from user-uploaded documents and images, and provides an interactive AI tutor.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": ""
+}
